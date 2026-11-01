@@ -1,57 +1,81 @@
 <!DOCTYPE html>
-<html lang="id" class="dark scroll-smooth">
+<html lang="id" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#030816">
+
+    <!-- ================= SEO & OPEN GRAPH (SUDAH DIOPTIMASI) ================= -->
     <meta name="description"
-        content="RISTECH menyediakan layanan portofolio digital profesional dan undangan pernikahan digital modern, interaktif, dan elegan.">
-    <title>RISTECH — Digital Portfolio & Digital Wedding Invitations</title>
+        content="Ristech.online - Jasa pembuatan Portfolio Digital dan Undangan Pernikahan Digital profesional, elegan, dan harga terjangkau. Dapatkan diskon khusus mahasiswa!">
+    <meta name="keywords"
+        content="undangan digital, portfolio digital, jasa website, ristech, ristech online, undangan online murah, portfolio mahasiswa, uika bogor, buat cv online">
+    <meta name="author" content="Ristech">
+    <link rel="canonical" href="https://ristech.online/">
 
-    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap"
-        rel="stylesheet">
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ristech.online/">
+    <meta property="og:title" content="Ristech | Digital Portfolio & Wedding Invitations">
+    <meta property="og:description"
+        content="Buat portfolio dan undangan pernikahan digitalmu sekarang. Dapatkan promo khusus mahasiswa UIKA Bogor diskon hingga 53%!">
 
-    <!-- Tailwind CSS CDN -->
+    <!-- PENTING: Pastikan kamu mengupload gambar bernama "og-ristech.jpg" ke folder assets/images/ -->
+    <meta property="og:image" content="https://ristech.online/assets/images/ogristech.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ristech.online/">
+    <meta name="twitter:title" content="Ristech | Digital Portfolio & Wedding Invitations">
+    <meta name="twitter:description"
+        content="Buat portfolio dan undangan pernikahan digitalmu sekarang. Dapatkan promo khusus mahasiswa UIKA Bogor diskon hingga 53%!">
+    <meta name="twitter:image" content="https://ristech.online/assets/images/ogristech.jpg">
+
+    <!-- Favicon (Ikon di tab browser) -->
+    <link rel="icon" type="image/png" href="https://ristech.online/assets/images/favicon.png">
+
+    <title>Ristech | Digital Portfolio & Wedding Invitations</title>
+    <!-- ====================================================================== -->
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Poppins for modern, neat look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <!-- GSAP & ScrollTrigger for High-End Smooth Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind Config for Custom Colors matching the Logo -->
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        navy: {
-                            deep: '#030816',
-                            card: '#0A1128',
-                            surface: '#111B38',
-                            border: '#1E294B'
-                        },
-                        cyan: {
-                            accent: '#00D2FF',
-                            glow: '#00D2FF33'
-                        },
-                        royal: '#0052D4'
-                    },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Poppins', 'sans-serif'],
                     },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                        'cyan-glow': 'linear-gradient(135deg, #00D2FF 0%, #0052D4 100%)',
-                        'purple-glow': 'linear-gradient(135deg, #A855F7 0%, #6366F1 100%)',
+                    colors: {
+                        brand: {
+                            light: '#e0f2fe',
+                            DEFAULT: '#0284c7',
+                            dark: '#031124',
+                            accent: '#0ea5e9',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
                     }
                 }
             }
@@ -59,1327 +83,928 @@
     </script>
 
     <style>
-        :root {
-            color-scheme: dark;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 90px;
-        }
-
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #030816;
-            color: #F3F4F6;
-            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Modern Glassmorphism System */
-        .glass-panel {
-            background: linear-gradient(135deg, rgba(13, 22, 47, 0.75) 0%, rgba(7, 13, 30, 0.85) 100%);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(0, 210, 255, 0.12);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .glass-panel-hover {
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .glass-panel-hover:hover {
-            border-color: rgba(0, 210, 255, 0.4);
-            box-shadow: 0 15px 35px rgba(0, 210, 255, 0.15), 0 0 15px rgba(0, 210, 255, 0.08);
-            transform: translateY(-6px);
-        }
-
-        /* Typography & Gradients */
-        .text-gradient {
-            background: linear-gradient(135deg, #00D2FF 0%, #0052D4 100%);
+        .gradient-text {
+            background: linear-gradient(to right, #0ea5e9, #0284c7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .text-gradient-purple {
-            background: linear-gradient(135deg, #E0E7FF 0%, #C084FC 50%, #818CF8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero-bg {
+            background-color: #031124;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(200, 100%, 20%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(210, 100%, 15%, 1) 0, transparent 50%);
         }
 
-        /* Mesh Grid Animation Background */
-        .bg-mesh {
-            background-image: radial-gradient(rgba(0, 210, 255, 0.09) 1px, transparent 1px);
-            background-size: 36px 36px;
-        }
-
-        /* Glowing Orbs Animation */
-        @keyframes floatSlow {
+        @keyframes slidefade {
 
             0%,
-            100% {
-                transform: translate(0px, 0px) scale(1);
-            }
-
-            50% {
-                transform: translate(30px, -40px) scale(1.08);
-            }
-        }
-
-        @keyframes pulseGlow {
-
-            0%,
-            100% {
-                opacity: 0.3;
+            25% {
+                opacity: 1;
                 transform: scale(1);
             }
 
-            50% {
-                opacity: 0.6;
-                transform: scale(1.15);
+            33%,
+            92% {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
             }
         }
 
-        .animate-float-1 {
-            animation: floatSlow 12s ease-in-out infinite;
+        .anim-slide-1 {
+            animation: slidefade 12s infinite;
         }
 
-        .animate-float-2 {
-            animation: floatSlow 16s ease-in-out infinite reverse;
-        }
-
-        .animate-pulse-slow {
-            animation: pulseGlow 6s ease-in-out infinite;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #030816;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #1E294B;
-            border-radius: 99px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00D2FF;
-        }
-
-        /* Interactive Cursor Indicator */
-        .glow-button-effect {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glow-button-effect::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+        .anim-slide-2 {
+            animation: slidefade 12s infinite 4s;
             opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
         }
 
-        .glow-button-effect:hover::after {
-            opacity: 1;
+        .anim-slide-3 {
+            animation: slidefade 12s infinite 8s;
+            opacity: 0;
+        }
+
+        .template-preview {
+            background-size: cover;
+            background-position: top center;
+            transition: background-position 5s ease-in-out;
+        }
+
+        .template-preview:hover,
+        .template-preview:active {
+            background-position: bottom center;
         }
     </style>
 </head>
 
-<body class="bg-navy-deep text-slate-100 antialiased selection:bg-cyan-accent selection:text-navy-deep bg-mesh">
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
 
-    <!-- NAVIGATION BAR -->
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2 sm:py-4" id="navbar">
-        <nav class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-            <div
-                class="glass-panel rounded-xl sm:rounded-2xl px-3 sm:px-5 py-2 sm:py-3 flex items-center justify-between border border-white/10 shadow-xl">
-                <!-- Logo & Brand with Asset Fallback -->
-                <a href="#beranda" class="flex items-center gap-2 sm:gap-3 group">
-                    <div
-                        class="relative w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-cyan-accent to-royal p-[2px] overflow-hidden transition-transform group-hover:scale-105 shrink-0">
-                        <div
-                            class="w-full h-full bg-navy-deep rounded-[6px] sm:rounded-[10px] flex items-center justify-center font-extrabold text-cyan-accent text-base sm:text-lg">
-                            <img src="assets/images/logo.png" alt="RISTECH Logo"
-                                class="w-5 h-5 sm:w-7 sm:h-7 object-contain"
-                                onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'font-black text-cyan-accent text-xs sm:text-base tracking-wider\'>RT</span>';">
-                        </div>
-                    </div>
-                    <div>
-                        <span
-                            class="text-base sm:text-xl font-black tracking-widest text-white block leading-none">RISTECH</span>
-                        <span
-                            class="text-[7px] sm:text-[9px] font-bold text-cyan-accent tracking-widest uppercase block mt-0.5 sm:mt-1">Digital
-                            Solution</span>
-                    </div>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm py-4">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <!-- Logo area -->
+            <a href="#" class="flex items-center gap-3 group py-1">
+                <!-- Gambar Logo (Ukuran Besar & Presisi) -->
+                <img src="assets/images/logo.png" alt="Logo RISTECH"
+                    class="h-14 md:h-16 w-auto object-contain flex-shrink-0 group-hover:scale-105 transition-transform">
+
+                <!-- Teks Nama Brand -->
+                <span class="font-bold text-2xl md:text-3xl tracking-wide text-brand-dark leading-none">RISTECH</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#home" class="text-gray-600 hover:text-brand transition-colors">Beranda</a>
+                <a href="#layanan" class="text-gray-600 hover:text-brand transition-colors">Layanan</a>
+                <a href="#portofolio" class="text-gray-600 hover:text-brand transition-colors">Portofolio</a>
+                <a href="#harga" class="text-gray-600 hover:text-brand transition-colors">Harga</a>
+                <a href="#testimoni" class="text-gray-600 hover:text-brand transition-colors">Testimoni</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#kontak"
+                    class="bg-brand hover:bg-brand-accent text-white px-6 py-2.5 rounded-full font-medium shadow-lg shadow-brand/30 transition-all duration-300 transform hover:-translate-y-1">
+                    Hubungi Kami
                 </a>
+            </div>
 
-                <!-- Desktop Navigation Links -->
-                <div class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-300">
-                    <a href="#layanan" class="hover:text-cyan-accent transition-colors">Layanan</a>
-                    <a href="#showcase" class="hover:text-cyan-accent transition-colors">Showcase</a>
-                    <a href="#keunggulan" class="hover:text-cyan-accent transition-colors">Keunggulan</a>
-                    <a href="#kalkulator" class="hover:text-cyan-accent transition-colors">Estimasi Harga</a>
-                    <a href="#faq" class="hover:text-cyan-accent transition-colors">FAQ</a>
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn"
+                class="md:hidden text-2xl text-brand-dark focus:outline-none p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t mt-4 absolute w-full shadow-xl rounded-b-2xl transition-all duration-300">
+            <div class="flex flex-col px-6 py-4 space-y-2 text-center">
+                <a href="#home"
+                    class="mobile-link text-gray-600 hover:text-brand hover:bg-brand-light/50 font-medium text-base py-3 rounded-xl transition-colors">Beranda</a>
+                <a href="#layanan"
+                    class="mobile-link text-gray-600 hover:text-brand hover:bg-brand-light/50 font-medium text-base py-3 rounded-xl transition-colors">Layanan</a>
+                <a href="#portofolio"
+                    class="mobile-link text-gray-600 hover:text-brand hover:bg-brand-light/50 font-medium text-base py-3 rounded-xl transition-colors">Portofolio</a>
+                <a href="#harga"
+                    class="mobile-link text-gray-600 hover:text-brand hover:bg-brand-light/50 font-medium text-base py-3 rounded-xl transition-colors">Harga</a>
+                <a href="#testimoni"
+                    class="mobile-link text-gray-600 hover:text-brand hover:bg-brand-light/50 font-medium text-base py-3 rounded-xl transition-colors">Testimoni</a>
+                <a href="#kontak"
+                    class="mobile-link bg-brand text-white px-6 py-3.5 rounded-xl font-semibold block mx-auto w-full mt-4 shadow-lg shadow-brand/30">Hubungi
+                    Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home"
+        class="pt-32 pb-24 md:pt-40 md:pb-28 hero-bg text-white relative overflow-hidden min-h-screen flex flex-col justify-center">
+        <!-- Abstract Shapes for background -->
+        <div
+            class="absolute top-20 left-10 w-72 h-72 bg-brand-accent rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-pulse">
+        </div>
+        <div
+            class="absolute bottom-10 right-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-[120px] opacity-20">
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12">
+                <div class="md:w-1/2 text-center md:text-left mt-8 md:mt-0" data-aos="fade-right"
+                    data-aos-duration="1000">
+                    <div
+                        class="inline-block px-4 py-1.5 rounded-full bg-brand-accent/20 border border-brand-accent/30 text-brand-light text-xs md:text-sm font-medium mb-4 md:mb-6">
+                        🚀 Solusi Digital Masa Kini
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6">
+                        Tingkatkan Impresi <span class="text-brand-accent">Digital</span> Anda Bersama RISTECH
+                    </h1>
+                    <p class="text-gray-300 text-base md:text-xl mb-8 leading-relaxed">
+                        Spesialis jasa pembuatan <strong>Portfolio Digital</strong> profesional dan <strong>Undangan
+                            Pernikahan Digital</strong> yang elegan, interaktif, dan mudah dibagikan.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start w-full">
+                        <a href="#layanan"
+                            class="bg-brand-accent hover:bg-blue-400 text-white px-8 py-3.5 rounded-full font-semibold shadow-lg shadow-brand-accent/40 transition-all duration-300 text-center w-full sm:w-auto">
+                            Lihat Layanan
+                        </a>
+                        <a href="#kontak"
+                            class="bg-transparent border-2 border-gray-400 hover:border-white text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 text-center w-full sm:w-auto">
+                            Konsultasi Gratis
+                        </a>
+                    </div>
                 </div>
 
-                <!-- CTA Button -->
-                <div class="hidden sm:block">
-                    <a href="https://wa.me/62895374670466?text=Halo%20RISTECH,%20saya%20ingin%20konsultasi%20pembuatan%20website"
-                        target="_blank"
-                        class="glow-button-effect relative inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold tracking-wide text-white transition-all duration-300 bg-cyan-glow rounded-xl shadow-lg shadow-cyan-accent/20 hover:shadow-cyan-accent/40 hover:scale-[1.02]">
-                        <i data-lucide="message-square" class="w-4 h-4 mr-2"></i>
-                        <span>Hubungi WA</span>
+                <div class="md:w-1/2 mt-16 md:mt-0 relative w-full flex justify-center" data-aos="fade-left"
+                    data-aos-duration="1000" data-aos-delay="200">
+                    <div
+                        class="relative w-[230px] h-[460px] sm:w-[280px] sm:h-[560px] bg-gray-900 border-[8px] sm:border-[12px] border-gray-900 rounded-[2.5rem] shadow-2xl overflow-hidden transform md:rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <!-- Notch HP -->
+                        <div
+                            class="absolute top-0 inset-x-0 h-5 sm:h-7 bg-gray-900 rounded-b-2xl w-24 sm:w-32 mx-auto z-30">
+                        </div>
+
+                        <!-- Layar HP & Animasi Slideshow -->
+                        <div class="relative w-full h-full bg-white overflow-hidden z-20 rounded-[2rem]">
+                            <!-- Foto 1: Prewed / Undangan -->
+                            <img src="assets/images/preview1.jpeg"
+                                class="absolute inset-0 w-full h-full object-cover anim-slide-1"
+                                alt="Undangan Pernikahan">
+                            <!-- Foto 2: Detail Cincin / Aesthetic -->
+                            <img src="assets/images/preview2.jpeg"
+                                class="absolute inset-0 w-full h-full object-cover anim-slide-2"
+                                alt="Detail Pernikahan">
+                            <!-- Foto 3: Portfolio / Web Mobile -->
+                            <img src="assets/images/preview3.jpg"
+                                class="absolute inset-0 w-full h-full object-cover anim-slide-3"
+                                alt="Portfolio Digital">
+
+                            <!-- Overlay UI Undangan Digital -->
+                            <div
+                                class="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-5 text-white z-20">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand/80 backdrop-blur flex items-center justify-center mb-3 animate-bounce shadow-lg">
+                                    <i class="fas fa-envelope-open-text text-white"></i>
+                                </div>
+                                <button
+                                    class="w-full bg-brand-accent/90 backdrop-blur text-white text-sm font-semibold py-3 rounded-xl">Preview
+                                    Layanan</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dekorasi tambahan -->
+                    <div
+                        class="absolute -bottom-6 left-0 sm:-left-10 bg-white rounded-2xl p-3 sm:p-4 shadow-xl z-30 flex items-center gap-3 animate-float border border-gray-100">
+                        <div
+                            class="w-10 h-10 rounded-full bg-green-100 text-green-500 flex items-center justify-center text-xl">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-medium">Lagu Romantis</p>
+                            <p class="text-sm font-bold text-gray-800">Auto-play</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Curve -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-12 md:h-20" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,137.94,131.7,219.86,116.5,255.43,109.84,289.4,94.2,321.39,56.44Z"
+                    class="fill-gray-50"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="layanan" class="py-12 md:py-24 bg-gray-50 relative">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16" data-aos="fade-up">
+                <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-wider mb-2">Layanan Kami</h2>
+                <h3 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4">Solusi Digital <span
+                        class="gradient-text">Terbaik</span> Untuk Anda</h3>
+                <p class="text-gray-600 text-sm md:text-base">Kami hadir untuk mengubah ide dan momen berharga Anda
+                    menjadi mahakarya digital yang interaktif dan mudah diakses dari mana saja.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto">
+                <!-- Service 1: Digital Portfolio -->
+                <div class="bg-white rounded-3xl p-6 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group relative overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-brand-light rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500">
+                    </div>
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand/10 text-brand flex items-center justify-center text-3xl mb-6 group-hover:bg-brand group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-dark mb-3">Portfolio Digital</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Bangun kredibilitas dan tampilkan karya terbaik Anda dengan website portfolio modern. Cocok
+                        untuk profesional, fotografer, desainer, dan pekerja kreatif.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-600 font-medium">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Desain
+                            Responsif & Modern</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Integrasi
+                            Media Sosial</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> SEO
+                            Friendly</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Form
+                            Kontak Langsung</li>
+                    </ul>
+                    <a href="#kontak"
+                        class="inline-flex items-center gap-2 text-brand font-semibold group-hover:text-brand-accent transition-colors">
+                        Pesan Sekarang <i
+                            class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Mobile Menu Toggle Button -->
-                <button id="mobile-menu-btn"
-                    class="md:hidden p-1.5 text-slate-300 hover:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-accent/50"
-                    aria-label="Toggle Navigation">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+                <!-- Service 2: Digital Wedding Invitation -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group relative overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500">
+                    </div>
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-accent/10 text-brand-accent flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-envelope-open-heart"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-dark mb-3">Undangan Digital</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Sebarkan momen bahagia pernikahan Anda dengan cara yang elegan, praktis, dan ramah lingkungan
+                        melalui website undangan interaktif.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-600 font-medium">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Galeri
+                            Foto & Video Prewedding</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Fitur
+                            RSVP & Buku Tamu Digital</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Peta
+                            Lokasi Terintegrasi</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Backsound
+                            Musik Romantis</li>
+                    </ul>
+                    <a href="#kontak"
+                        class="inline-flex items-center gap-2 text-brand-accent font-semibold group-hover:text-brand transition-colors">
+                        Pesan Sekarang <i
+                            class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="keunggulan" class="py-12 md:py-24 bg-white border-y border-gray-100">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-wider mb-2">Mengapa Ristech?
+                    </h2>
+                    <h3 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4 md:mb-6">Keunggulan Layanan
+                        <br>Pembuatan Website Kami
+                    </h3>
+                    <p class="text-gray-600 mb-8 text-sm md:text-base">
+                        Kami tidak hanya membuat website, kami menciptakan pengalaman digital yang merepresentasikan
+                        nilai Anda. Ristech.online berkomitmen memberikan hasil terbaik dengan proses yang transparan.
+                    </p>
+
+                    <div class="space-y-6">
+                        <!-- Feature 1 -->
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-xl font-bold text-brand-dark mb-1">Desain Eksklusif & Elegan</h5>
+                                <p class="text-gray-600 text-sm">Setiap desain disesuaikan dengan karakter dan kebutuhan
+                                    unik Anda. Tidak pasaran dan terlihat premium.</p>
+                            </div>
+                        </div>
+                        <!-- Feature 2 -->
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-xl font-bold text-brand-dark mb-1">Cepat & Responsif</h5>
+                                <p class="text-gray-600 text-sm">Website dioptimasi untuk dimuat dengan cepat dan tampil
+                                    sempurna di semua perangkat (HP, Tablet, Desktop).</p>
+                            </div>
+                        </div>
+                        <!-- Feature 3 -->
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-xl font-bold text-brand-dark mb-1">Dukungan Penuh</h5>
+                                <p class="text-gray-600 text-sm">Tim kami siap membantu Anda dari proses revisi hingga
+                                    website online dengan sempurna.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 relative" data-aos="fade-left">
+                    <div class="absolute inset-0 bg-brand rounded-full filter blur-[100px] opacity-10"></div>
+                    <div class="grid grid-cols-2 gap-4 relative z-10">
+                        <div class="space-y-4 mt-8">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                <img src="assets/images/preview1.jpeg" alt="UI"
+                                    class="rounded-xl w-full h-auto object-cover">
+                            </div>
+                            <div
+                                class="bg-gray-50 rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                <img src="assets/images/fitur2.jpeg" alt="Mobile"
+                                    class="rounded-xl w-full h-auto object-cover">
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                <img src="assets/images/wedding theme.jpg" alt="Wedding"
+                                    class="rounded-xl w-full h-auto object-cover">
+                            </div>
+                            <div
+                                class="bg-gray-50 rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                <img src="assets/images/portfolio.png" alt="Portfolio"
+                                    class="rounded-xl w-full h-auto object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portofolio" class="py-12 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16" data-aos="fade-up">
+                <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-wider mb-2">Portofolio Ristech
+                </h2>
+                <h3 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4">Karya yang Telah <span
+                        class="gradient-text">Dipublikasikan</span></h3>
+                <p class="text-gray-600 text-sm md:text-base">Eksplorasi berbagai proyek website yang telah sukses kami
+                    kembangkan. Klik tombol kunjungi untuk melihat versi live dari setiap karya.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Karya 1: Personal CV -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200 bg-white flex flex-col"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-full h-64 md:h-72 template-preview"
+                        style="background-image: url('assets/images/preview1.jpeg'); background-size: cover; background-position: top;">
+                    </div>
+                    <div class="p-5 border-t border-gray-100 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-white bg-gray-800 px-2 py-1 rounded">Portfolio /
+                                    CV</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-brand-dark">CV Muhamad Al Haris</h4>
+                            <p class="text-sm text-gray-500 mt-1 mb-4">Website CV dan portofolio interaktif pribadi
+                                dengan fitur lengkap.</p>
+                        </div>
+                        <a href="https://cvmuhamadalharis.my.id/" target="_blank" rel="noopener noreferrer"
+                            class="block text-center w-full bg-brand hover:bg-brand-dark text-white text-sm font-semibold py-2 rounded-lg transition-colors">
+                            Kunjungi Website <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Karya 2: PAI Segudang Prestasi -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200 bg-white flex flex-col"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-full h-64 md:h-72 template-preview"
+                        style="background-image: url('assets/images/pai.jpeg'); background-size: cover; background-position: top;">
+                    </div>
+                    <div class="p-5 border-t border-gray-100 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-white bg-blue-600 px-2 py-1 rounded">Web
+                                    Portal</span>
+                                <span class="text-xs text-gray-500"><i class="fas fa-star text-yellow-500"></i> HIMA
+                                    PAI</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-brand-dark">PAI Segudang Prestasi</h4>
+                            <p class="text-sm text-gray-500 mt-1 mb-4">Platform dokumentasi prestasi mahasiswa untuk
+                                HIMA PAI UIKA Bogor.</p>
+                        </div>
+                        <a href="https://prestasipai.my.id" target="_blank" rel="noopener noreferrer"
+                            class="block text-center w-full bg-brand hover:bg-brand-dark text-white text-sm font-semibold py-2 rounded-lg transition-colors">
+                            Kunjungi Website <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Karya 3: Portfolio Client -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200 bg-white flex flex-col"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-full h-64 md:h-72 template-preview"
+                        style="background-image: url('assets/images/coaching.jpeg'); background-size: cover; background-position: top;">
+                    </div>
+                    <div class="p-5 border-t border-gray-100 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-white bg-gray-800 px-2 py-1 rounded">landing
+                                    page</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-brand-dark">Coaching Public Speaking</h4>
+                            <p class="text-sm text-gray-500 mt-1 mb-4">Website pelatihan public speaking yang
+                                menyediakan materi dan sesi latihan interaktif.</p>
+                        </div>
+                        <!-- Ganti tanda # dengan link website Farah jika sudah online -->
+                        <a href="https://coachingpublicspeaking.robbaniconsulting.com" target="_blank"
+                            rel="noopener noreferrer"
+                            class="block text-center w-full bg-brand hover:bg-brand-dark text-white text-sm font-semibold py-2 rounded-lg transition-colors">
+                            Kunjungi Website <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Karya 4: Landing Page Bisnis -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200 bg-white flex flex-col"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-full h-64 md:h-72 template-preview"
+                        style="background-image: url('assets/images/rco.jpeg'); background-size: cover; background-position: top;">
+                    </div>
+                    <div class="p-5 border-t border-gray-100 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-brand-dark bg-yellow-400 px-2 py-1 rounded">Landing
+                                    Page</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-brand-dark">Robbani Consulting</h4>
+                            <p class="text-sm text-gray-500 mt-1 mb-4">Pengembangan landing page dan elemen visual
+                                interaktif untuk event marketing.</p>
+                        </div>
+                        <a href="https://www.robbaniconsulting.com" target="_blank" rel="noopener noreferrer"
+                            class="block text-center w-full bg-brand hover:bg-brand-dark text-white text-sm font-semibold py-2 rounded-lg transition-colors">
+                            Kunjungi Website <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div> <!-- PASTIKAN PENUTUP GRID DI SINI -->
+
+            <!-- Bagian Tombol Konsultasi Diletakkan DI LUAR Grid -->
+            <div class="mt-12 text-center w-full">
+                <a href="#kontak"
+                    class="inline-block bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded-full font-bold shadow-lg transition-colors">
+                    Konsultasi Pembuatan Website Serupa <i class="fab fa-whatsapp ml-2"></i>
+                </a>
+            </div>
+    </section>
+
+    <section id="harga" class="py-12 md:py-24 bg-white border-y border-gray-100">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-10 md:mb-16" data-aos="fade-up">
+                <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-wider mb-2">Paket Harga</h2>
+                <h3 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4">Investasi <span
+                        class="gradient-text">Terbaik</span> Untuk Masa Depan</h3>
+                <p class="text-gray-600 text-sm md:text-base">Pilih paket layanan sesuai kebutuhan Anda dengan harga
+                    yang transparan dan terjangkau.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+                <!-- Pricing 1: Portfolio -->
+                <div class="bg-gray-50 rounded-3xl p-6 md:p-8 border border-gray-200 relative overflow-hidden flex flex-col shadow-sm"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 bg-brand text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        Terlaris</div>
+                    <h4 class="text-xl md:text-2xl font-bold text-brand-dark mb-2">Portfolio Digital</h4>
+                    <p class="text-gray-500 text-sm mb-6">Tampil profesional untuk melamar kerja atau proyek.</p>
+
+                    <div class="mb-6">
+                        <span class="text-gray-400 line-through text-lg">Rp 75.000</span>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold text-brand-dark">Rp 35.000</span>
+                            <span class="text-sm font-semibold text-green-500 bg-green-100 px-2 py-0.5 rounded">Diskon
+                                53%*</span>
+                        </div>
+                        <p class="text-xs text-brand mt-2 font-medium">*Promo Khusus Mahasiswa Aktif UIKA Bogor</p>
+                    </div>
+
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand mt-1"></i> <span
+                                class="text-sm text-gray-700">Desain 1 Halaman Interaktif</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand mt-1"></i> <span
+                                class="text-sm text-gray-700">Galeri Karya / Proyek</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand mt-1"></i> <span
+                                class="text-sm text-gray-700">Tombol Download CV</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand mt-1"></i> <span
+                                class="text-sm text-gray-700">Integrasi Sosial Media & WA</span></li>
+                    </ul>
+
+                    <button onclick="openUikaModal()"
+                        class="w-full bg-brand-dark hover:bg-brand text-white font-bold py-3 rounded-xl transition-colors shadow-lg">
+                        Klaim Promo UIKA
+                    </button>
+                    <button onclick="sendToWA('portfolio_umum')"
+                        class="w-full mt-3 bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 font-bold py-3 rounded-xl transition-colors">
+                        Pesan Harga Normal (Rp 75rb)
+                    </button>
+                </div>
+
+                <!-- Pricing 2: Undangan -->
+                <div class="bg-brand-dark rounded-3xl p-6 md:p-8 border border-brand-dark relative overflow-hidden flex flex-col shadow-xl"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-brand rounded-full blur-2xl opacity-50"></div>
+                    <h4 class="text-xl md:text-2xl font-bold text-white mb-2">Undangan Digital</h4>
+                    <p class="text-gray-400 text-sm mb-6">Sebarkan momen bahagia dengan elegan.</p>
+
+                    <div class="mb-6">
+                        <span class="text-gray-400 line-through text-lg">Rp 150.000</span>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold text-white">Rp 80.000</span>
+                            <span class="text-sm font-semibold text-white bg-brand px-2 py-0.5 rounded">Diskon
+                                46%</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-accent mt-1"></i> <span
+                                class="text-sm text-gray-300">Desain Premium & Animasi</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-accent mt-1"></i> <span
+                                class="text-sm text-gray-300">Galeri Foto & Video Prewed</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-accent mt-1"></i> <span
+                                class="text-sm text-gray-300">Buku Tamu & RSVP Digital</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-accent mt-1"></i> <span
+                                class="text-sm text-gray-300">Hitung Mundur & Navigasi Maps</span></li>
+                    </ul>
+
+                    <button onclick="sendToWA('undangan_promo')"
+                        class="w-full bg-brand-accent hover:bg-blue-400 text-white font-bold py-3 rounded-xl transition-colors shadow-lg shadow-brand-accent/30 relative z-10">
+                        Pesan Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimoni" class="py-12 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16" data-aos="fade-up">
+                <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-wider mb-2">Testimoni Klien</h2>
+                <h3 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4">Apa Kata <span
+                        class="gradient-text">Mereka?</span></h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 relative"
+                    data-aos="fade-up">
+                    <i class="fas fa-quote-left text-3xl md:text-4xl text-gray-200 absolute top-6 right-6"></i>
+                    <p class="text-gray-600 mb-6 relative z-10 italic text-sm md:text-base">"Terima kasih Ristech!
+                        Portfolio digital saya terlihat sangat profesional. Berkat web ini saya berhasil mendapatkan
+                        pekerjaan di perusahaan impian saya. Prosesnya cepat dan respon admin sangat ramah!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop"
+                            alt="User 1" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-brand-dark">Sarah Amelia</h5>
+                            <p class="text-xs text-gray-500">Mahasiswa UIKA Bogor (Klien Portfolio)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 relative"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-quote-left text-3xl md:text-4xl text-gray-200 absolute top-6 right-6"></i>
+                    <p class="text-gray-600 mb-6 relative z-10 italic text-sm md:text-base">"Undangan digitalnya elegan
+                        banget! Teman-teman pada puji desainnya interaktif dan lagunya pas. Fitur RSVP sangat ngebantu
+                        rekap tamu undangan yang hadir. Harga promonya juga worth it banget!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
+                            alt="User 2" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-brand-dark">Budi & Siska</h5>
+                            <p class="text-xs text-gray-500">Pasangan Pengantin (Klien Undangan)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-12 md:py-24 bg-white relative">
+        <div class="container mx-auto px-4 md:px-12">
+            <div class="bg-brand-dark rounded-3xl overflow-hidden shadow-2xl relative">
+                <!-- Background decoration -->
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-brand rounded-full mix-blend-screen filter blur-[80px] opacity-50">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent rounded-full mix-blend-screen filter blur-[80px] opacity-30">
+                </div>
+
+                <div class="relative z-10 flex flex-col md:flex-row p-6 md:p-16 gap-8 md:gap-12">
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">Siap Memulai Proyek Anda?</h2>
+                        <p class="text-gray-300 mb-8 text-sm md:text-base">
+                            Konsultasikan kebutuhan pembuatan Portfolio Digital atau Undangan Pernikahan Anda sekarang.
+                            Dapatkan penawaran harga terbaik dari tim Ristech.
+                        </p>
+
+                        <div class="space-y-5 text-white">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand flex items-center justify-center">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">WhatsApp Admin</p>
+                                    <p class="font-semibold">+62 895-3746-70466</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand flex items-center justify-center">
+                                    <i class="far fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Email</p>
+                                    <p class="font-semibold">alharismuhamad456@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand flex items-center justify-center">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Instagram</p>
+                                    <p class="font-semibold">@ristech_official</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 bg-white rounded-2xl p-6 md:p-8 shadow-lg" data-aos="fade-left">
+                        <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-6">Kirim Pesan / Order</h3>
+                        <form id="contactForm" onsubmit="handleGeneralContact(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                                <input type="text" id="contactNama"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all text-base"
+                                    placeholder="Masukkan nama Anda" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Layanan yang
+                                    diminati</label>
+                                <select id="contactLayanan"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all text-base bg-white"
+                                    required>
+                                    <option value="" disabled selected>Pilih Layanan</option>
+                                    <option value="Portfolio Digital">Portfolio Digital</option>
+                                    <option value="Undangan Pernikahan">Undangan Pernikahan Digital</option>
+                                    <option value="Konsultasi Lainnya">Konsultasi Lainnya</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Pesan / Kebutuhan</label>
+                                <textarea id="contactPesan" rows="3"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all text-base"
+                                    placeholder="Ceritakan detail kebutuhan Anda..." required></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-brand hover:bg-brand-accent text-white font-bold py-3 rounded-lg transition-colors flex justify-center items-center gap-2">
+                                <i class="fab fa-whatsapp text-lg"></i> Kirim ke WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Klaim Promo UIKA -->
+    <div id="uikaModal"
+        class="fixed inset-0 bg-black/60 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+        <div class="bg-white rounded-2xl w-full max-w-md shadow-2xl overflow-hidden transform scale-95 transition-transform max-h-[90vh] flex flex-col"
+            id="uikaModalContent">
+            <div class="bg-brand-dark p-4 md:p-5 flex justify-between items-center text-white flex-shrink-0">
+                <h4 class="font-bold text-lg md:text-xl">Klaim Promo UIKA</h4>
+                <button onclick="closeUikaModal()"
+                    class="text-gray-300 hover:text-white focus:outline-none w-8 h-8 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-colors">
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
-        </nav>
-
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden px-3 sm:px-6 pt-2 pb-4 transition-all">
-            <div
-                class="glass-panel rounded-xl sm:rounded-2xl p-3 sm:p-4 flex flex-col gap-2 text-slate-200 text-xs sm:text-sm font-medium border border-cyan-accent/20 shadow-2xl">
-                <a href="#layanan"
-                    class="mobile-link py-2 px-3 hover:bg-white/5 rounded-lg transition-colors flex items-center justify-between">
-                    <span>Layanan</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-accent"></i>
-                </a>
-                <a href="#showcase"
-                    class="mobile-link py-2 px-3 hover:bg-white/5 rounded-lg transition-colors flex items-center justify-between">
-                    <span>Showcase Demo</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-accent"></i>
-                </a>
-                <a href="#keunggulan"
-                    class="mobile-link py-2 px-3 hover:bg-white/5 rounded-lg transition-colors flex items-center justify-between">
-                    <span>Keunggulan</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-accent"></i>
-                </a>
-                <a href="#kalkulator"
-                    class="mobile-link py-2 px-3 hover:bg-white/5 rounded-lg transition-colors flex items-center justify-between">
-                    <span>Estimasi Harga</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-accent"></i>
-                </a>
-                <a href="#faq"
-                    class="mobile-link py-2 px-3 hover:bg-white/5 rounded-lg transition-colors flex items-center justify-between">
-                    <span>FAQ</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-accent"></i>
-                </a>
-                <a href="https://wa.me/62895374670466?text=Halo%20RISTECH,%20saya%20ingin%20konsultasi%20pembuatan%20website"
-                    target="_blank"
-                    class="mt-2 w-full py-2.5 bg-cyan-glow text-center rounded-xl font-semibold flex items-center justify-center gap-2 text-white shadow-lg shadow-cyan-accent/20 active:scale-95 transition-transform">
-                    <i data-lucide="message-square" class="w-4 h-4"></i>
-                    <span>Hubungi via WhatsApp</span>
-                </a>
+            <div class="p-5 md:p-6 overflow-y-auto">
+                <div
+                    class="bg-blue-50 border border-blue-100 rounded-lg p-3 mb-4 text-sm text-brand-dark font-medium flex items-start gap-2">
+                    <i class="fas fa-info-circle text-brand mt-0.5"></i>
+                    <span>Harga promo mahasiswa aktif UIKA menjadi <strong>Rp 35.000</strong> (Diskon 53%).</span>
+                </div>
+                <form onsubmit="handleUikaPromo(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                        <input type="text" id="uikaNama"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand outline-none text-base"
+                            placeholder="Sesuai KTM" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">NPM</label>
+                        <input type="number" id="uikaNpm"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand outline-none text-base"
+                            placeholder="Nomor Pokok Mahasiswa" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir</label>
+                        <input type="date" id="uikaTtl"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand outline-none text-base"
+                            required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Bukti Kartu Tanda Mahasiswa
+                            (KTM)</label>
+                        <p
+                            class="text-xs text-orange-500 mb-2 italic bg-orange-50 p-2 rounded border border-orange-100">
+                            *Form ini terhubung ke WA, harap siapkan foto KTM fisik/digital untuk dikirimkan secara
+                            manual di chat WhatsApp setelah menekan tombol.</p>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3.5 rounded-xl transition-colors flex justify-center items-center gap-2 mt-2 shadow-lg shadow-green-500/30">
+                        <i class="fab fa-whatsapp text-xl"></i> Verifikasi via WhatsApp
+                    </button>
+                </form>
             </div>
         </div>
-    </header>
+    </div>
 
-    <!-- HERO SECTION -->
-    <section id="beranda" class="relative pt-24 sm:pt-36 md:pt-44 pb-12 sm:pb-24 md:pb-32 overflow-hidden">
-        <!-- Ambient Glowing Lights -->
+    <!-- Footer -->
+    <footer class="bg-gray-50 pt-16 pb-8 border-t border-gray-200">
         <div
-            class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[600px] h-[280px] sm:h-[600px] bg-cyan-accent/15 rounded-full blur-[80px] sm:blur-[150px] pointer-events-none animate-pulse-slow">
-        </div>
-        <div
-            class="absolute top-1/3 left-1/4 w-[200px] sm:w-[400px] h-[200px] sm:h-[400px] bg-royal/20 rounded-full blur-[70px] sm:blur-[130px] pointer-events-none animate-float-1">
-        </div>
-        <div
-            class="absolute bottom-10 right-10 w-[180px] sm:w-[350px] h-[180px] sm:h-[350px] bg-purple-600/15 rounded-full blur-[70px] sm:blur-[120px] pointer-events-none animate-float-2">
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto">
-
-                <!-- Tagline Badge -->
-                <div
-                    class="gsap-hero inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-panel text-[9px] sm:text-xs md:text-sm font-semibold tracking-wide sm:tracking-widest text-cyan-accent uppercase mb-4 sm:mb-8 border border-cyan-accent/30 shadow-inner max-w-full">
-                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-cyan-accent animate-ping shrink-0"></span>
-                    <span class="truncate">PORTOFOLIO & UNDANGAN DIGITAL</span>
-                </div>
-
-                <!-- Main Headline -->
-                <h1
-                    class="gsap-hero text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight sm:leading-tight mb-3 sm:mb-6">
-                    Where Your Story Comes to Life.</span>
-                </h1>
-
-                <!-- Subheadline -->
-                <p
-                    class="gsap-hero text-xs sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-6 sm:mb-10 font-normal leading-relaxed">
-                    Brand personalmu ditampilkan dengan indah. Kisah cintamu dirayakan dengan elegan.
+            class="container mx-auto px-6 md:px-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col items-center md:items-start">
+                <a href="#" class="flex items-center gap-2 mb-2">
+                    <span class="font-bold text-2xl tracking-wide text-brand-dark">RISTECH</span>
+                </a>
+                <p class="text-sm text-gray-500">
+                    DIGITAL PORTFOLIO • DIGITAL WEDDING INVITATIONS
                 </p>
+            </div>
 
-                <!-- Action Buttons -->
-                <div
-                    class="gsap-hero flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-10 sm:mb-16">
-                    <a href="#kalkulator"
-                        class="glow-button-effect w-full sm:w-auto px-6 py-3.5 rounded-xl bg-cyan-glow text-white font-bold text-xs sm:text-base tracking-wide shadow-xl shadow-cyan-accent/25 hover:shadow-cyan-accent/40 hover:scale-[1.03] active:scale-95 transition-all flex items-center justify-center gap-2">
-                        <span>Pesan Website Sekarang</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <a href="#showcase"
-                        class="w-full sm:w-auto px-6 py-3.5 rounded-xl glass-panel text-slate-200 hover:text-white font-semibold text-xs sm:text-base transition-all border border-slate-700 hover:border-cyan-accent/50 flex items-center justify-center gap-2 hover:bg-white/5 active:scale-95">
-                        <i data-lucide="sparkles" class="w-4 h-4 text-cyan-accent"></i>
-                        <span>Lihat Showcase Demo</span>
-                    </a>
-                </div>
-
-                <!-- Key Metrics / Stats -->
-                <div
-                    class="gsap-hero grid grid-cols-3 gap-2 sm:gap-6 md:gap-8 max-w-3xl mx-auto pt-5 sm:pt-8 border-t border-slate-800/80">
-                    <div class="glass-panel p-2.5 sm:p-6 rounded-xl sm:rounded-2xl text-center glass-panel-hover">
-                        <p class="text-lg sm:text-3xl md:text-4xl font-black text-gradient">250+</p>
-                        <p class="text-[10px] sm:text-sm text-slate-400 mt-0.5 sm:mt-1 font-medium leading-tight">Klien
-                            Puas</p>
-                    </div>
-                    <div class="glass-panel p-2.5 sm:p-6 rounded-xl sm:rounded-2xl text-center glass-panel-hover">
-                        <p class="text-lg sm:text-3xl md:text-4xl font-black text-gradient">100%</p>
-                        <p class="text-[10px] sm:text-sm text-slate-400 mt-0.5 sm:mt-1 font-medium leading-tight">Fast &
-                            Responsive</p>
-                    </div>
-                    <div class="glass-panel p-2.5 sm:p-6 rounded-xl sm:rounded-2xl text-center glass-panel-hover">
-                        <p class="text-lg sm:text-3xl md:text-4xl font-black text-gradient">1-2 Hari</p>
-                        <p class="text-[10px] sm:text-sm text-slate-400 mt-0.5 sm:mt-1 font-medium leading-tight">
-                            Pengerjaan Kilat</p>
-                    </div>
-                </div>
+            <div class="flex space-x-6 text-gray-400">
+                <a href="#" class="hover:text-brand transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="https://wa.me/62895374670466" class="hover:text-brand transition-colors"><i
+                        class="fab fa-whatsapp text-2xl"></i></a>
             </div>
         </div>
-    </section>
-
-    <!-- LAYANAN UTAMA -->
-    <section id="layanan" class="py-12 sm:py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16 gsap-reveal">
-                <h2
-                    class="text-[10px] sm:text-xs font-extrabold text-cyan-accent uppercase tracking-widest mb-1.5 sm:mb-2">
-                    Layanan Utama</h2>
-                <p class="text-xl sm:text-3xl font-extrabold text-white md:text-4xl">Solusi Digital Berkelas Dunia</p>
-                <p class="text-slate-400 mt-1.5 sm:mt-3 text-xs sm:text-base">Dirancang presisi untuk karir profesional
-                    maupun hari kebahagiaan pernikahan Anda.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
-                <!-- Card 1: Portofolio Digital -->
-                <div
-                    class="gsap-reveal glass-panel glass-panel-hover p-5 sm:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden group border border-slate-800 hover:border-cyan-accent/50 flex flex-col justify-between">
-                    <div
-                        class="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-cyan-accent/5 rounded-bl-full pointer-events-none group-hover:bg-cyan-accent/15 transition-all">
-                    </div>
-                    <div>
-                        <div
-                            class="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-cyan-glow/20 border border-cyan-accent/40 flex items-center justify-center text-cyan-accent mb-4 sm:mb-6 shadow-lg shadow-cyan-accent/10">
-                            <i data-lucide="user-check" class="w-5 h-5 sm:w-7 sm:h-7"></i>
-                        </div>
-                        <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">CV & Portofolio Digital</h3>
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
-                            Tingkatkan personal branding untuk melamar kerja, karir tech/freelance dengan portofolio
-                            interaktif yang modern, ATS-friendly, dan memikat recruiter.
-                        </p>
-                        <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8 text-xs sm:text-sm text-slate-300">
-                            <li class="flex items-center gap-2 sm:gap-3">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-accent shrink-0"></i>
-                                <span>Desain Interaktif & Dark Mode Modern</span>
-                            </li>
-                            <li class="flex items-center gap-2 sm:gap-3">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-accent shrink-0"></i>
-                                <span>Download PDF CV & Integrasi Social Media</span>
-                            </li>
-                            <li class="flex items-center gap-2 sm:gap-3">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-accent shrink-0"></i>
-                                <span>Showcase Gallery & Interactive Skill Bar</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="#kalkulator" onclick="selectService('cv')"
-                        class="inline-flex items-center text-cyan-accent font-bold text-xs sm:text-sm hover:translate-x-1 transition-transform gap-2 pt-2">
-                        <span>Pesan Portofolio</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-
-                <!-- Card 2: Undangan Pernikahan Digital -->
-                <div
-                    class="gsap-reveal glass-panel glass-panel-hover p-5 sm:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden group border border-slate-800 hover:border-cyan-accent/50 flex flex-col justify-between">
-                    <div
-                        class="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-purple-500/5 rounded-bl-full pointer-events-none group-hover:bg-purple-500/15 transition-all">
-                    </div>
-                    <div>
-                        <div
-                            class="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-purple-500/20 border border-purple-400/40 flex items-center justify-center text-purple-300 mb-4 sm:mb-6 shadow-lg shadow-purple-500/10">
-                            <i data-lucide="heart" class="w-5 h-5 sm:w-7 sm:h-7"></i>
-                        </div>
-                        <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Undangan Pernikahan Digital</h3>
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
-                            Bagikan kebahagiaan pernikahan Anda dengan undangan online eksklusif, musik backsound, RSVP
-                            WhatsApp otomatis, serta peta lokasi interaktif.
-                        </p>
-                        <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8 text-xs sm:text-sm text-slate-300">
-                            <li class="flex items-center gap-2 sm:gap-3">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400 shrink-0"></i>
-                                <span>Konfirmasi RSVP WhatsApp & Kolom Ucapan</span>
-                            </li>
-                            <li class="flex items-center gap-2 sm:gap-3">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400 shrink-0"></i>
-                                <span>Backsound Audio Custom & Love Story Timeline</span>
-                            </li>
-                            <li class="flex items-center gap-2 sm:gap-3">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400 shrink-0"></i>
-                                <span>Google Maps, Countdown Timer & Amplop Digital</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="#kalkulator" onclick="selectService('wedding')"
-                        class="inline-flex items-center text-purple-300 font-bold text-xs sm:text-sm hover:translate-x-1 transition-transform gap-2 pt-2">
-                        <span>Pesan Undangan</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SHOWCASE & DEMO SECTION -->
-    <section id="showcase" class="py-12 sm:py-20 bg-navy-card/40 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-12 gsap-reveal">
-                <h2
-                    class="text-[10px] sm:text-xs font-extrabold text-cyan-accent uppercase tracking-widest mb-1.5 sm:mb-2">
-                    Showcase Produk</h2>
-                <p class="text-xl sm:text-3xl font-extrabold text-white md:text-4xl">Pratinjau Live Template</p>
-                <p class="text-slate-400 mt-1.5 text-xs sm:text-sm">Lihat langsung contoh karya nyata yang telah kami
-                    buat.</p>
-            </div>
-
-            <!-- Filter Tabs -->
-            <div class="flex justify-center mb-6 sm:mb-12 gsap-reveal">
-                <div
-                    class="glass-panel p-1 rounded-xl sm:rounded-2xl inline-flex gap-1 border border-slate-800 max-w-full overflow-x-auto">
-                    <button onclick="filterShowcase('all')" id="btn-all"
-                        class="showcase-tab active px-3 sm:px-5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold transition-all bg-cyan-glow text-white shadow-lg whitespace-nowrap">
-                        Semua
-                    </button>
-                    <button onclick="filterShowcase('cv')" id="btn-cv"
-                        class="showcase-tab px-3 sm:px-5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-all whitespace-nowrap">
-                        Portofolio
-                    </button>
-                    <button onclick="filterShowcase('wedding')" id="btn-wedding"
-                        class="showcase-tab px-3 sm:px-5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-all whitespace-nowrap">
-                        Undangan Digital
-                    </button>
-                </div>
-            </div>
-
-            <!-- Showcase Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 max-w-5xl mx-auto" id="showcase-container">
-
-                <!-- Product Item 1: Portofolio -->
-                <div
-                    class="showcase-item cv gsap-reveal glass-panel glass-panel-hover rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col border border-slate-800">
-                    <!-- Frame Header -->
-                    <div class="p-3 sm:p-4 bg-navy-deep/90 border-b border-slate-800 flex items-center justify-between">
-                        <div class="flex items-center gap-1.5 sm:gap-2">
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80 inline-block"></span>
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80 inline-block"></span>
-                        </div>
-                        <span
-                            class="text-[10px] sm:text-[11px] text-slate-400 font-mono truncate px-2">cvmuhamadalharis.my.id</span>
-                        <i data-lucide="monitor" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-500 shrink-0"></i>
-                    </div>
-                    <!-- Image Preview -->
-                    <div class="relative h-44 sm:h-64 bg-slate-900 overflow-hidden group">
-                        <img id="portfolio-img-preview" src="assets/images/portfoliopromosi.jpg"
-                            alt="Executive Portfolio Demo"
-                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80';">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent opacity-80">
-                        </div>
-                        <span
-                            class="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 bg-cyan-glow text-white text-[9px] sm:text-[10px] font-extrabold px-2.5 py-0.5 sm:py-1 rounded-full uppercase tracking-wider shadow-lg">Portofolio</span>
-                    </div>
-                    <!-- Details -->
-                    <div class="p-4 sm:p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-base sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Executive Tech
-                                Portfolio</h3>
-                            <p class="text-slate-400 text-xs mb-3 sm:mb-4 leading-relaxed">
-                                Tampilan premium dark mode interaktif untuk Engineer, Developer, Designer, dan
-                                Profesional modern.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
-                                <span
-                                    class="text-[9px] sm:text-[10px] bg-navy-surface text-cyan-accent border border-cyan-accent/20 px-2 py-0.5 sm:py-1 rounded-md">Dark
-                                    Theme</span>
-                                <span
-                                    class="text-[9px] sm:text-[10px] bg-navy-surface text-cyan-accent border border-cyan-accent/20 px-2 py-0.5 sm:py-1 rounded-md">Project
-                                    Showcase</span>
-                                <span
-                                    class="text-[9px] sm:text-[10px] bg-navy-surface text-cyan-accent border border-cyan-accent/20 px-2 py-0.5 sm:py-1 rounded-md">Interactive
-                                    Skills</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-slate-800">
-                            <a href="https://cvmuhamadalharis.my.id/" target="_blank"
-                                class="flex-1 py-2.5 sm:py-3 rounded-xl glass-panel text-slate-200 text-xs font-bold hover:text-white hover:border-cyan-accent text-center transition-all flex items-center justify-center gap-1.5 active:scale-95">
-                                <span>Buka Live Demo</span>
-                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-cyan-accent"></i>
-                            </a>
-                            <a href="#kalkulator" onclick="selectService('cv')"
-                                class="px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-cyan-glow text-white text-xs font-extrabold hover:opacity-90 transition-opacity shadow-lg shadow-cyan-accent/20 active:scale-95">Pesan</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Item 2: Wedding -->
-                <div
-                    class="showcase-item wedding gsap-reveal glass-panel glass-panel-hover rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col border border-slate-800">
-                    <!-- Frame Header -->
-                    <div class="p-3 sm:p-4 bg-navy-deep/90 border-b border-slate-800 flex items-center justify-between">
-                        <div class="flex items-center gap-1.5 sm:gap-2">
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80 inline-block"></span>
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-                            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80 inline-block"></span>
-                        </div>
-                        <span
-                            class="text-[10px] sm:text-[11px] text-slate-400 font-mono truncate px-2">assets.robbaniconsulting.com</span>
-                        <i data-lucide="smartphone" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-500 shrink-0"></i>
-                    </div>
-                    <!-- Image Preview -->
-                    <div class="relative h-44 sm:h-64 bg-slate-900 overflow-hidden group">
-                        <img id="wedding-img-preview" src="assets/images/weddingpromosi.jpg" alt="Royal Wedding Demo"
-                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80';">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent opacity-80">
-                        </div>
-                        <span
-                            class="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 bg-amber-400 text-slate-950 text-[9px] sm:text-[10px] font-extrabold px-2.5 py-0.5 sm:py-1 rounded-full uppercase tracking-wider shadow-lg">Undangan</span>
-                    </div>
-                    <!-- Details -->
-                    <div class="p-4 sm:p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-base sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Royal Grace Luxury
-                                Wedding</h3>
-                            <p class="text-slate-400 text-xs mb-3 sm:mb-4 leading-relaxed">
-                                Nuansa pernikahan mewah nan elegan dengan musik autoplay, RSVP WhatsApp, ucapan, dan
-                                peta lokasi lokasi akurat.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
-                                <span
-                                    class="text-[9px] sm:text-[10px] bg-navy-surface text-amber-300 border border-amber-400/20 px-2 py-0.5 sm:py-1 rounded-md">Music
-                                    Audio</span>
-                                <span
-                                    class="text-[9px] sm:text-[10px] bg-navy-surface text-amber-300 border border-amber-400/20 px-2 py-0.5 sm:py-1 rounded-md">RSVP
-                                    WA</span>
-                                <span
-                                    class="text-[9px] sm:text-[10px] bg-navy-surface text-amber-300 border border-amber-400/20 px-2 py-0.5 sm:py-1 rounded-md">Amplop
-                                    Digital</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-slate-800">
-                            <a href="https://assets.robbaniconsulting.com" target="_blank"
-                                class="flex-1 py-2.5 sm:py-3 rounded-xl glass-panel text-slate-200 text-xs font-bold hover:text-white hover:border-cyan-accent text-center transition-all flex items-center justify-center gap-1.5 active:scale-95">
-                                <span>Buka Live Demo</span>
-                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-cyan-accent"></i>
-                            </a>
-                            <a href="#kalkulator" onclick="selectService('wedding')"
-                                class="px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-cyan-glow text-white text-xs font-extrabold hover:opacity-90 transition-opacity shadow-lg shadow-cyan-accent/20 active:scale-95">Pesan</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- KALKULATOR ESTIMASI HARGA INTERAKTIF -->
-    <section id="kalkulator" class="py-12 sm:py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16 gsap-reveal">
-                <h2
-                    class="text-[10px] sm:text-xs font-extrabold text-cyan-accent uppercase tracking-widest mb-1.5 sm:mb-2">
-                    Transparan & Terhitung</h2>
-                <p class="text-xl sm:text-3xl font-extrabold text-white md:text-4xl">Kalkulator Estimasi Harga</p>
-                <p class="text-slate-400 mt-1.5 text-xs sm:text-sm">Hitung estimasi investasi website Anda secara
-                    langsung & otomatis.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                <!-- Form Calculator Options -->
-                <div
-                    class="lg:col-span-7 gsap-reveal glass-panel p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-800 space-y-5 sm:space-y-8">
-                    <!-- 1. Jenis Layanan -->
-                    <div>
-                        <label class="block text-xs sm:text-sm font-semibold text-white mb-2.5 sm:mb-3">1. Pilih Jenis
-                            Layanan</label>
-                        <div class="grid grid-cols-2 gap-2.5 sm:gap-4">
-                            <button type="button" onclick="setCalcService('cv')" id="calc-service-cv"
-                                class="calc-type-btn active p-3 sm:p-4 rounded-xl sm:rounded-2xl glass-panel border border-cyan-accent text-left transition-all bg-cyan-accent/10 active:scale-98">
-                                <i data-lucide="user" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent mb-1.5 sm:mb-2"></i>
-                                <p class="text-xs sm:text-sm font-bold text-white leading-snug">CV / Portofolio</p>
-                                <p class="text-[9px] sm:text-xs text-slate-400 mt-0.5">Mulai Rp 149k</p>
-                            </button>
-                            <button type="button" onclick="setCalcService('wedding')" id="calc-service-wedding"
-                                class="calc-type-btn p-3 sm:p-4 rounded-xl sm:rounded-2xl glass-panel border border-slate-800 text-left transition-all active:scale-98">
-                                <i data-lucide="heart"
-                                    class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent mb-1.5 sm:mb-2"></i>
-                                <p class="text-xs sm:text-sm font-bold text-white leading-snug">Undangan Digital</p>
-                                <p class="text-[9px] sm:text-xs text-slate-400 mt-0.5">Mulai Rp 129k</p>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- 2. Pilihan Domain -->
-                    <div>
-                        <label class="block text-xs sm:text-sm font-semibold text-white mb-2.5 sm:mb-3">2. Pilihan
-                            Domain Website</label>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
-                            <label class="cursor-pointer block">
-                                <input type="radio" name="domain" value="0" checked onchange="updatePrice()"
-                                    class="sr-only peer">
-                                <div
-                                    class="p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 peer-checked:border-cyan-accent peer-checked:bg-cyan-accent/10 transition-all text-left sm:text-center flex sm:block items-center justify-between">
-                                    <p class="text-xs font-bold text-white">Subdomain.ristech.online
-                                    <div class="ristech.online"></div>
-                                    </p>
-                                    <p class="text-[10px] text-cyan-accent sm:mt-0.5">Gratis / Include</p>
-                                </div>
-                            </label>
-                            <label class="cursor-pointer block">
-                                <input type="radio" name="domain" value="150000" onchange="updatePrice()"
-                                    class="sr-only peer">
-                                <div
-                                    class="p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 peer-checked:border-cyan-accent peer-checked:bg-cyan-accent/10 transition-all text-left sm:text-center flex sm:block items-center justify-between">
-                                    <p class="text-xs font-bold text-white">Domain .com Custom</p>
-                                    <p class="text-[10px] text-slate-400 sm:mt-0.5">+ Rp 150k/thn</p>
-                                </div>
-                            </label>
-                            <label class="cursor-pointer block">
-                                <input type="radio" name="domain" value="220000" onchange="updatePrice()"
-                                    class="sr-only peer">
-                                <div
-                                    class="p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 peer-checked:border-cyan-accent peer-checked:bg-cyan-accent/10 transition-all text-left sm:text-center flex sm:block items-center justify-between">
-                                    <p class="text-xs font-bold text-white">Domain .id Custom</p>
-                                    <p class="text-[10px] text-slate-400 sm:mt-0.5">+ Rp 220k/thn</p>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- 3. Fitur Tambahan -->
-
-                    <!-- CARD 1: FITUR TAMBAHAN UNDANGAN PERNIKAHAN DIGITAL -->
-                    <div>
-                        <label class="block text-xs sm:text-sm font-semibold text-white mb-2.5 sm:mb-3">
-                            3. Fitur Tambahan — Undangan Pernikahan (Opsional)
-                        </label>
-
-                        <div class="space-y-2 sm:space-y-3">
-                            <label
-                                class="flex items-center justify-between p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 hover:border-slate-700 cursor-pointer">
-                                <div class="flex items-center gap-2 sm:gap-3">
-                                    <input type="checkbox" value="25000" id="addon-music" onchange="updatePrice()"
-                                        class="w-4 h-4 rounded text-cyan-accent bg-slate-900 border-slate-700 focus:ring-cyan-accent shrink-0">
-                                    <span class="text-[11px] sm:text-xs font-medium text-slate-200">
-                                        Audio Backsound Musik Custom
-                                    </span>
-                                </div>
-                                <span class="text-xs font-bold text-cyan-accent shrink-0 ml-2">+ Rp 25k</span>
-                            </label>
-
-                            <label
-                                class="flex items-center justify-between p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 hover:border-slate-700 cursor-pointer">
-                                <div class="flex items-center gap-2 sm:gap-3">
-                                    <input type="checkbox" value="35000" id="addon-rsvp" onchange="updatePrice()"
-                                        class="w-4 h-4 rounded text-cyan-accent bg-slate-900 border-slate-700 focus:ring-cyan-accent shrink-0">
-                                    <span class="text-[11px] sm:text-xs font-medium text-slate-200">
-                                        Sistem RSVP Integrasi WhatsApp
-                                    </span>
-                                </div>
-                                <span class="text-xs font-bold text-cyan-accent shrink-0 ml-2">+ Rp 35k</span>
-                            </label>
-
-                            <label
-                                class="flex items-center justify-between p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 hover:border-slate-700 cursor-pointer">
-                                <div class="flex items-center gap-2 sm:gap-3">
-                                    <input type="checkbox" value="50000" id="addon-gallery" onchange="updatePrice()"
-                                        class="w-4 h-4 rounded text-cyan-accent bg-slate-900 border-slate-700 focus:ring-cyan-accent shrink-0">
-                                    <span class="text-[11px] sm:text-xs font-medium text-slate-200">
-                                        Galeri Foto & Video HD Unlimited
-                                    </span>
-                                </div>
-                                <span class="text-xs font-bold text-cyan-accent shrink-0 ml-2">+ Rp 50k</span>
-                            </label>
-
-                            <label
-                                class="flex items-center justify-between p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 hover:border-slate-700 cursor-pointer">
-                                <div class="flex items-center gap-2 sm:gap-3">
-                                    <input type="checkbox" value="20000" id="addon-maps" onchange="updatePrice()"
-                                        class="w-4 h-4 rounded text-cyan-accent bg-slate-900 border-slate-700 focus:ring-cyan-accent shrink-0">
-                                    <span class="text-[11px] sm:text-xs font-medium text-slate-200">
-                                        Integrasi Google Maps Peta Lokasi
-                                    </span>
-                                </div>
-                                <span class="text-xs font-bold text-cyan-accent shrink-0 ml-2">+ Rp 20k</span>
-                            </label>
-                        </div>
-                    </div>
-
-
-
-                    <!-- CARD 2: FITUR TAMBAHAN PORTFOLIO DIGITAL -->
-                    <div class="mt-5 sm:mt-6">
-                        <label class="block text-xs sm:text-sm font-semibold text-white mb-2.5 sm:mb-3">
-                            4. Fitur Tambahan — Portfolio Digital (Opsional)
-                        </label>
-
-                        <div class="space-y-2 sm:space-y-3">
-
-                            <label
-                                class="flex items-center justify-between p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 hover:border-slate-700 cursor-pointer">
-                                <div class="flex items-center gap-2 sm:gap-3">
-                                    <input type="checkbox" value="30000" id="portfolio-projects"
-                                        onchange="updatePrice()"
-                                        class="w-4 h-4 rounded text-cyan-accent bg-slate-900 border-slate-700 focus:ring-cyan-accent shrink-0">
-                                    <span class="text-[11px] sm:text-xs font-medium text-slate-200">
-                                        Galeri Project & Karya Tambahan
-                                    </span>
-                                </div>
-                                <span class="text-xs font-bold text-cyan-accent shrink-0 ml-2">+ Rp 30k</span>
-                            </label>
-
-                            <label
-                                class="flex items-center justify-between p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 hover:border-slate-700 cursor-pointer">
-                                <div class="flex items-center gap-2 sm:gap-3">
-                                    <input type="checkbox" value="25000" id="portfolio-contact" onchange="updatePrice()"
-                                        class="w-4 h-4 rounded text-cyan-accent bg-slate-900 border-slate-700 focus:ring-cyan-accent shrink-0">
-                                    <span class="text-[11px] sm:text-xs font-medium text-slate-200">
-                                        Tombol Kontak WhatsApp & Email
-                                    </span>
-                                </div>
-                                <span class="text-xs font-bold text-cyan-accent shrink-0 ml-2">+ Rp 25k</span>
-                            </label>
-
-                            <label
-                                class="flex items-center justify-between p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 hover:border-slate-700 cursor-pointer">
-                                <div class="flex items-center gap-2 sm:gap-3">
-                                    <input type="checkbox" value="40000" id="portfolio-seo" onchange="updatePrice()"
-                                        class="w-4 h-4 rounded text-cyan-accent bg-slate-900 border-slate-700 focus:ring-cyan-accent shrink-0">
-                                    <span class="text-[11px] sm:text-xs font-medium text-slate-200">
-                                        Optimasi SEO Dasar
-                                    </span>
-                                </div>
-                                <span class="text-xs font-bold text-cyan-accent shrink-0 ml-2">+ Rp 40k</span>
-                            </label>
-
-                            <label
-                                class="flex items-center justify-between p-2.5 sm:p-3.5 rounded-xl glass-panel border border-slate-800 hover:border-slate-700 cursor-pointer">
-                                <div class="flex items-center gap-2 sm:gap-3">
-                                    <input type="checkbox" value="35000" id="portfolio-analytics"
-                                        onchange="updatePrice()"
-                                        class="w-4 h-4 rounded text-cyan-accent bg-slate-900 border-slate-700 focus:ring-cyan-accent shrink-0">
-                                    <span class="text-[11px] sm:text-xs font-medium text-slate-200">
-                                        Integrasi Google Analytics
-                                    </span>
-                                </div>
-                                <span class="text-xs font-bold text-cyan-accent shrink-0 ml-2">+ Rp 35k</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Price Summary Card -->
-                <div
-                    class="lg:col-span-5 gsap-reveal glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-cyan-accent/30 lg:sticky lg:top-28 bg-navy-card">
-                    <h3 class="text-base sm:text-lg font-bold text-white mb-3 sm:mb-6 flex items-center gap-2">
-                        <i data-lucide="receipt" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent"></i>
-                        <span>Ringkasan Estimasi Biaya</span>
-                    </h3>
-
-                    <div class="space-y-2.5 sm:space-y-4 text-xs sm:text-sm text-slate-300 pb-4 sm:pb-6 border-b border-slate-800"
-                        id="summary-items">
-                        <div class="flex justify-between items-center gap-2">
-                            <span>Layanan Utama: <b id="summary-service-name" class="text-white">CV /
-                                    Portofolio</b></span>
-                            <span class="font-mono text-cyan-accent shrink-0" id="summary-service-price">Rp
-                                149.000</span>
-                        </div>
-                        <div class="flex justify-between items-center text-slate-400 gap-2">
-                            <span>Domain: <span id="summary-domain-name">Subdomain RISTECH</span></span>
-                            <span class="font-mono shrink-0" id="summary-domain-price">Rp 0</span>
-                        </div>
-                        <div id="summary-addons-list"
-                            class="space-y-1.5 pt-2 border-t border-slate-800/50 text-slate-400">
-                            <!-- Dynamic Addons list -->
-                        </div>
-                    </div>
-
-                    <div class="pt-4 sm:pt-6 mb-5 sm:mb-8">
-                        <span class="text-[10px] sm:text-xs text-slate-400 uppercase font-semibold tracking-wider">Total
-                            Estimasi Harga</span>
-                        <div class="text-2xl sm:text-4xl font-black text-gradient mt-1" id="total-price-display">
-                            Rp 149.000
-                        </div>
-                        <p class="text-[10px] sm:text-[11px] text-slate-400 mt-1.5">*Rincian harga akan terkirim
-                            otomatis ke WhatsApp kami.</p>
-                    </div>
-
-                    <button onclick="sendOrderWhatsApp()"
-                        class="glow-button-effect w-full py-3.5 sm:py-4 rounded-xl bg-cyan-glow text-white font-bold text-xs sm:text-sm tracking-wide shadow-xl shadow-cyan-accent/20 hover:shadow-cyan-accent/40 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                        <span>Pesan via WhatsApp Sekarang</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KEUNGGULAN RISTECH -->
-    <section id="keunggulan" class="py-12 sm:py-20 bg-navy-card/30 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16 gsap-reveal">
-                <h2
-                    class="text-[10px] sm:text-xs font-extrabold text-cyan-accent uppercase tracking-widest mb-1.5 sm:mb-2">
-                    Keunggulan Utama</h2>
-                <p class="text-xl sm:text-3xl font-extrabold text-white md:text-4xl">Kenapa Harus Memilih RISTECH?</p>
-                <p class="text-slate-400 mt-1.5 sm:mt-3 text-xs sm:text-sm">Standar kualitas tinggi dan kemudahan
-                    pengerjaan untuk proyek Anda.</p>
-            </div>
-
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-                <div
-                    class="gsap-reveal glass-panel p-4 sm:p-6 rounded-xl sm:rounded-2xl glass-panel-hover border border-slate-800">
-                    <div
-                        class="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-cyan-glow/20 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent mb-3 sm:mb-5">
-                        <i data-lucide="zap" class="w-4 h-4 sm:w-6 sm:h-6"></i>
-                    </div>
-                    <h3 class="text-xs sm:text-lg font-bold text-white mb-1">Pengerjaan Kilat</h3>
-                    <p class="text-[10px] sm:text-xs text-slate-400 leading-normal sm:leading-relaxed">Selesai 1-2 hari
-                        kerja setelah data lengkap.</p>
-                </div>
-
-                <div
-                    class="gsap-reveal glass-panel p-4 sm:p-6 rounded-xl sm:rounded-2xl glass-panel-hover border border-slate-800">
-                    <div
-                        class="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-cyan-glow/20 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent mb-3 sm:mb-5">
-                        <i data-lucide="layout" class="w-4 h-4 sm:w-6 sm:h-6"></i>
-                    </div>
-                    <h3 class="text-xs sm:text-lg font-bold text-white mb-1">Desain Eksklusif</h3>
-                    <p class="text-[10px] sm:text-xs text-slate-400 leading-normal sm:leading-relaxed">Tampilan
-                        futuristik, rapi, dan responsif.</p>
-                </div>
-
-                <div
-                    class="gsap-reveal glass-panel p-4 sm:p-6 rounded-xl sm:rounded-2xl glass-panel-hover border border-slate-800">
-                    <div
-                        class="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-cyan-glow/20 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent mb-3 sm:mb-5">
-                        <i data-lucide="shield-check" class="w-4 h-4 sm:w-6 sm:h-6"></i>
-                    </div>
-                    <h3 class="text-xs sm:text-lg font-bold text-white mb-1">Garansi & Revisi</h3>
-                    <p class="text-[10px] sm:text-xs text-slate-400 leading-normal sm:leading-relaxed">Bantuan
-                        penyesuaian data pasca pengerjaan.</p>
-                </div>
-
-                <div
-                    class="gsap-reveal glass-panel p-4 sm:p-6 rounded-xl sm:rounded-2xl glass-panel-hover border border-slate-800">
-                    <div
-                        class="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-cyan-glow/20 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent mb-3 sm:mb-5">
-                        <i data-lucide="smartphone" class="w-4 h-4 sm:w-6 sm:h-6"></i>
-                    </div>
-                    <h3 class="text-xs sm:text-lg font-bold text-white mb-1">Mobile First</h3>
-                    <p class="text-[10px] sm:text-xs text-slate-400 leading-normal sm:leading-relaxed">Dioptimalkan
-                        berjalan mulus di Smartphone.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section id="faq" class="py-12 sm:py-20 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16 gsap-reveal">
-                <h2
-                    class="text-[10px] sm:text-xs font-extrabold text-cyan-accent uppercase tracking-widest mb-1.5 sm:mb-2">
-                    Sering Ditanyakan</h2>
-                <p class="text-xl sm:text-3xl font-extrabold text-white md:text-4xl">Frequently Asked Questions</p>
-            </div>
-
-            <div class="space-y-2.5 sm:space-y-4">
-                <!-- FAQ Item 1 -->
-                <div class="gsap-reveal glass-panel rounded-xl sm:rounded-2xl overflow-hidden border border-slate-800">
-                    <button onclick="toggleFaq(1)"
-                        class="w-full p-3.5 sm:p-5 text-left flex items-center justify-between font-semibold text-white text-xs sm:text-base focus:outline-none gap-3">
-                        <span>Berapa lama waktu pengerjaan website?</span>
-                        <i data-lucide="chevron-down" id="faq-icon-1"
-                            class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent shrink-0 transition-transform duration-300"></i>
-                    </button>
-                    <div id="faq-content-1"
-                        class="hidden p-3.5 sm:p-5 pt-0 text-xs sm:text-sm text-slate-400 border-t border-slate-800/50 leading-relaxed">
-                        Pengerjaan standar membutuhkan waktu 1 hingga 2 hari kerja setelah data, foto, dan informasi
-                        lengkap Anda kirimkan.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="gsap-reveal glass-panel rounded-xl sm:rounded-2xl overflow-hidden border border-slate-800">
-                    <button onclick="toggleFaq(2)"
-                        class="w-full p-3.5 sm:p-5 text-left flex items-center justify-between font-semibold text-white text-xs sm:text-base focus:outline-none gap-3">
-                        <span>Apakah saya bisa meminta revisi?</span>
-                        <i data-lucide="chevron-down" id="faq-icon-2"
-                            class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent shrink-0 transition-transform duration-300"></i>
-                    </button>
-                    <div id="faq-content-2"
-                        class="hidden p-3.5 sm:p-5 pt-0 text-xs sm:text-sm text-slate-400 border-t border-slate-800/50 leading-relaxed">
-                        Tentu! Kami memberikan garansi revisi penyesuaian teks, foto, dan minor tweaks hingga website
-                        sesuai keinginan Anda.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="gsap-reveal glass-panel rounded-xl sm:rounded-2xl overflow-hidden border border-slate-800">
-                    <button onclick="toggleFaq(3)"
-                        class="w-full p-3.5 sm:p-5 text-left flex items-center justify-between font-semibold text-white text-xs sm:text-base focus:outline-none gap-3">
-                        <span>Dapatkah memakai domain custom (.com / .id)?</span>
-                        <i data-lucide="chevron-down" id="faq-icon-3"
-                            class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-accent shrink-0 transition-transform duration-300"></i>
-                    </button>
-                    <div id="faq-content-3"
-                        class="hidden p-3.5 sm:p-5 pt-0 text-xs sm:text-sm text-slate-400 border-t border-slate-800/50 leading-relaxed">
-                        Bisa sekali. Anda dapat memilih domain custom (.com / .id) langsung pada kalkulator estimasi
-                        biaya di atas.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="pt-10 sm:pt-16 pb-8 sm:pb-12 bg-navy-deep border-t border-slate-800 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 mb-8 sm:mb-12">
-                <!-- Brand Info -->
-                <div class="sm:col-span-2">
-                    <a href="#beranda" class="flex items-center gap-2.5 mb-3">
-                        <div
-                            class="w-8 h-8 rounded-xl bg-gradient-to-br from-cyan-accent to-royal p-[2px] overflow-hidden flex items-center justify-center shrink-0">
-                            <div class="w-full h-full bg-navy-deep rounded-[10px] flex items-center justify-center">
-                                <img src="assets/images/logo.png" alt="RISTECH Logo" class="w-5 h-5 object-contain"
-                                    onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'font-black text-cyan-accent text-xs\'>RT</span>';">
-                            </div>
-                        </div>
-                        <span class="text-base sm:text-lg font-black tracking-widest text-white">RISTECH</span>
-                    </a>
-                    <p class="text-xs text-slate-400 max-w-sm mb-4 leading-relaxed">
-                        Layanan pembuatan Website Portofolio / CV Digital profesional dan Undangan Pernikahan Digital
-                        dengan desain futuristik, cepat, dan responsif.
-                    </p>
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel text-[10px] sm:text-[11px] text-cyan-accent border border-cyan-accent/20">
-                        <i data-lucide="shield-check" class="w-4 h-4 shrink-0"></i>
-                        <span>Terpercaya & Garansi Akses Fast-Load</span>
-                    </div>
-                </div>
-
-                <!-- Nav Links -->
-                <div>
-                    <h4 class="text-xs font-bold text-white mb-2.5 sm:mb-4 uppercase tracking-widest text-cyan-accent">
-                        Navigasi</h4>
-                    <ul class="space-y-2 text-xs text-slate-400">
-                        <li><a href="#layanan" class="hover:text-cyan-accent transition-colors">Layanan Utama</a></li>
-                        <li><a href="#showcase" class="hover:text-cyan-accent transition-colors">Showcase Demo</a></li>
-                        <li><a href="#keunggulan" class="hover:text-cyan-accent transition-colors">Keunggulan
-                                RISTECH</a></li>
-                        <li><a href="#kalkulator" class="hover:text-cyan-accent transition-colors">Estimasi Harga</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Contacts -->
-                <div>
-                    <h4 class="text-xs font-bold text-white mb-2.5 sm:mb-4 uppercase tracking-widest text-cyan-accent">
-                        Hubungi Kami</h4>
-                    <div class="flex flex-col gap-2">
-                        <a href="https://wa.me/62895374670466" target="_blank"
-                            class="flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-accent transition-colors">
-                            <i data-lucide="phone" class="w-4 h-4 text-cyan-accent shrink-0"></i>
-                            <span>WhatsApp</span>
-                        </a>
-                        <a href="https://www.instagram.com/ristech_official?mdxt=MTl3eTNpMHdsM3hrMQ%3D%3D&utm_source=qr"
-                            target="_blank"
-                            class="flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-accent transition-colors">
-                            <svg class="w-4 h-4 text-pink-400 shrink-0" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="https://shopee.co.id" target="_blank"
-                            class="flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-accent transition-colors">
-                            <i data-lucide="shopping-bag" class="w-4 h-4 text-orange-400 shrink-0"></i>
-                            <span>shopee</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="pt-6 sm:pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-xs text-slate-500 gap-2 text-center sm:text-left">
-                <p>&copy; 2026 RISTECH Digital Solution. All Rights Reserved.</p>
-                <p>Crafted for Modern & Interactive Web Experience</p>
-            </div>
+        <div
+            class="container mx-auto px-6 md:px-12 mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+            &copy; 2026 Ristech.online. All rights reserved. | <a href="/sitemap.xml"
+                class="hover:text-brand underline">Sitemap</a>
         </div>
     </footer>
 
+    <!-- AOS Library Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+        // Initialize Animate On Scroll
+        AOS.init({
+            once: true,
+            offset: 100,
+        });
 
-        // GSAP Animations Initialization
-        document.addEventListener("DOMContentLoaded", () => {
-            gsap.registerPlugin(ScrollTrigger);
-
-            // Hero Elements Fade In & Scale
-            gsap.from(".gsap-hero", {
-                duration: 1,
-                y: 40,
-                opacity: 0,
-                stagger: 0.15,
-                ease: "power3.out"
-            });
-
-            // Scroll Trigger Reveals
-            const revealElements = document.querySelectorAll(".gsap-reveal");
-            revealElements.forEach((el) => {
-                gsap.from(el, {
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 85%",
-                        toggleActions: "play none none none"
-                    },
-                    duration: 0.8,
-                    y: 35,
-                    opacity: 0,
-                    ease: "power2.out"
-                });
-            });
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+            }
         });
 
         // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
 
-        mobileLinks.forEach(link => {
+        links.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+                menu.classList.add('hidden');
             });
         });
 
-        // Filter Showcase Items
-        function filterShowcase(category) {
-            const items = document.querySelectorAll('.showcase-item');
-            const tabs = document.querySelectorAll('.showcase-tab');
+        // Nomor WA Admin Ristech
+        const adminWA = "62895374670466";
 
-            tabs.forEach(tab => {
-                tab.classList.remove('active', 'bg-cyan-glow', 'text-white');
-                tab.classList.add('text-slate-400');
-            });
-
-            const activeBtn = document.getElementById(`btn-${category}`);
-            if (activeBtn) {
-                activeBtn.classList.add('active', 'bg-cyan-glow', 'text-white');
-                activeBtn.classList.remove('text-slate-400');
+        // Logic Pengiriman ke WhatsApp
+        function sendToWA(type) {
+            let text = "";
+            if (type === 'portfolio_umum') {
+                text = "Halo Admin Ristech! Saya tertarik untuk membuat *Portfolio Digital* (Harga Normal Rp 75.000). Mohon panduannya untuk langkah selanjutnya.";
+            } else if (type === 'undangan_promo') {
+                text = "Halo Admin Ristech! Saya tertarik untuk memesan *Undangan Digital* dengan Promo Diskon 46% (Rp 80.000). Mohon info lengkapnya.";
             }
 
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Price Calculator Logic
-        let currentService = 'cv';
-        const basePrices = {
-            cv: 149000,
-            wedding: 129000
-        };
-
-        function setCalcService(type) {
-            currentService = type;
-
-            // Toggle active styles on buttons
-            const cvBtn = document.getElementById('calc-service-cv');
-            const weddingBtn = document.getElementById('calc-service-wedding');
-
-            cvBtn.classList.toggle('border-cyan-accent', type === 'cv');
-            cvBtn.classList.toggle('bg-cyan-accent/10', type === 'cv');
-            cvBtn.classList.toggle('border-slate-800', type !== 'cv');
-
-            weddingBtn.classList.toggle('border-cyan-accent', type === 'wedding');
-            weddingBtn.classList.toggle('bg-cyan-accent/10', type === 'wedding');
-            weddingBtn.classList.toggle('border-slate-800', type !== 'wedding');
-
-            updatePrice();
-        }
-
-        function selectService(type) {
-            setCalcService(type);
-        }
-
-        // Format angka menjadi Rupiah
-        function formatRupiah(amount) {
-            return 'Rp ' + amount.toLocaleString('id-ID');
-        }
-
-        // Update harga berdasarkan layanan, domain, dan fitur tambahan
-        function updatePrice() {
-            const basePrices = {
-                cv: 149000,
-                invitation: 129000
-            };
-
-            // 1. Normalisasi layanan yang dipilih
-            if (['wedding', 'undangan'].includes(currentService)) {
-                currentService = 'invitation';
-            }
-
-            const service = currentService === 'cv' ? 'cv' : 'invitation';
-
-            // 2. Hitung harga dasar
-            let total = basePrices[service];
-
-            const serviceNameEl = document.getElementById('summary-service-name');
-            const servicePriceEl = document.getElementById('summary-service-price');
-
-            if (serviceNameEl) {
-                serviceNameEl.innerText = service === 'cv'
-                    ? 'CV / Portofolio'
-                    : 'Undangan Digital';
-            }
-
-            if (servicePriceEl) {
-                servicePriceEl.innerText = formatRupiah(basePrices[service]);
-            }
-
-            // 3. Hitung harga domain
-            const selectedDomain = document.querySelector(
-                'input[name="domain"]:checked'
-            );
-
-            const domainPrice = selectedDomain
-                ? parseInt(selectedDomain.value, 10) || 0
-                : 0;
-
-            total += domainPrice;
-
-            const domainNameEl = document.getElementById('summary-domain-name');
-            const domainPriceEl = document.getElementById('summary-domain-price');
-
-            if (domainNameEl) {
-                if (domainPrice === 0) {
-                    domainNameEl.innerText = 'Subdomain RISTECH';
-                } else if (domainPrice === 150000) {
-                    domainNameEl.innerText = 'Domain .com';
-                } else if (domainPrice === 220000) {
-                    domainNameEl.innerText = 'Domain .id';
-                } else {
-                    domainNameEl.innerText = 'Domain Custom';
-                }
-            }
-
-            if (domainPriceEl) {
-                domainPriceEl.innerText = formatRupiah(domainPrice);
-            }
-
-            // 4. Daftar fitur tambahan
-            const addons = {
-                invitation: [
-                    {
-                        id: 'addon-music',
-                        name: 'Audio Backsound Musik Custom',
-                        price: 25000
-                    },
-                    {
-                        id: 'addon-rsvp',
-                        name: 'Sistem RSVP Integrasi WhatsApp',
-                        price: 35000
-                    },
-                    {
-                        id: 'addon-gallery',
-                        name: 'Galeri Foto & Video HD Unlimited',
-                        price: 50000
-                    },
-                    {
-                        id: 'addon-maps',
-                        name: 'Integrasi Google Maps Peta Lokasi',
-                        price: 20000
-                    }
-                ],
-                cv: [
-                    {
-                        id: 'portfolio-projects',
-                        name: 'Galeri Project & Karya Tambahan',
-                        price: 30000
-                    },
-                    {
-                        id: 'portfolio-contact',
-                        name: 'Tombol Kontak WhatsApp & Email',
-                        price: 25000
-                    },
-                    {
-                        id: 'portfolio-seo',
-                        name: 'Optimasi SEO Dasar',
-                        price: 40000
-                    },
-                    {
-                        id: 'portfolio-analytics',
-                        name: 'Integrasi Google Analytics',
-                        price: 35000
-                    }
-                ]
-            };
-
-            // 5. Hitung fitur tambahan sesuai layanan aktif
-            const activeAddons = addons[service];
-
-            const addonsListEl = document.getElementById('summary-addons-list');
-            const addonSummaryEl = document.getElementById('summary-addon-name');
-            const addonPriceEl = document.getElementById('summary-addon-price');
-
-            if (addonsListEl) {
-                addonsListEl.innerHTML = '';
-            }
-
-            let addonTotal = 0;
-            const selectedAddonNames = [];
-
-            activeAddons.forEach(addon => {
-                const checkbox = document.getElementById(addon.id);
-
-                if (checkbox && checkbox.checked) {
-                    addonTotal += addon.price;
-                    selectedAddonNames.push(addon.name);
-
-                    // Tampilkan rincian fitur yang dipilih
-                    if (addonsListEl) {
-                        const item = document.createElement('div');
-                        item.className =
-                            'flex justify-between items-center gap-3 text-slate-300';
-
-                        const nameEl = document.createElement('span');
-                        nameEl.textContent = '+ ' + addon.name;
-
-                        const priceEl = document.createElement('span');
-                        priceEl.className =
-                            'font-mono text-cyan-accent shrink-0';
-                        priceEl.textContent = formatRupiah(addon.price);
-
-                        item.appendChild(nameEl);
-                        item.appendChild(priceEl);
-                        addonsListEl.appendChild(item);
-                    }
-                }
-            });
-
-            // 6. Tambahkan biaya fitur ke total
-            total += addonTotal;
-
-            // 7. Perbarui ringkasan fitur tambahan
-            if (addonSummaryEl) {
-                addonSummaryEl.innerText = selectedAddonNames.length
-                    ? selectedAddonNames.join(', ')
-                    : 'Tidak ada';
-            }
-
-            if (addonPriceEl) {
-                addonPriceEl.innerText = formatRupiah(addonTotal);
-            }
-
-            // 8. Perbarui total harga
-            const totalPriceEl = document.getElementById('summary-total-price');
-            const totalDisplayEl = document.getElementById('total-price-display');
-
-            if (totalPriceEl) {
-                totalPriceEl.innerText = formatRupiah(total);
-            }
-
-            if (totalDisplayEl) {
-                totalDisplayEl.innerText = formatRupiah(total);
-            }
-
-            return total;
-        }
-
-        // WhatsApp Order Link Generator
-        function sendOrderWhatsApp() {
-            const service = currentService === 'cv' ? 'CV / Portofolio Digital' : 'Undangan Pernikahan Digital';
-            const selectedDomain = document.querySelector('input[name="domain"]:checked');
-            let domainText = "Subdomain .ristech.online";
-            if (selectedDomain.value == "150000") domainText = "Domain Custom .com";
-            if (selectedDomain.value == "220000") domainText = "Domain Custom .id";
-
-            let addonsText = [];
-            if (document.getElementById('addon-music').checked) addonsText.push("Audio Backsound Musik");
-            if (document.getElementById('addon-rsvp').checked) addonsText.push("RSVP WhatsApp");
-            if (document.getElementById('addon-gallery').checked) addonsText.push("Galeri Unlimited");
-            if (document.getElementById('addon-maps').checked) addonsText.push("Google Maps");
-
-            const totalPrice = document.getElementById('total-price-display').innerText;
-
-            let message = `Halo RISTECH, saya ingin pesan website dengan rincian berikut:%0A%0A`;
-            message += `📌 *Layanan Utama:* ${service}%0A`;
-            message += `🌐 *Pilihan Domain:* ${domainText}%0A`;
-            if (addonsText.length > 0) {
-                message += `✨ *Fitur Tambahan:* ${addonsText.join(', ')}%0A`;
-            }
-            message += `💰 *Estimasi Total:* ${totalPrice}%0A%0A`;
-            message += `Mohon bantuan untuk langkah selanjutnya, terima kasih!`;
-
-            window.open(`https://wa.me/62895374670466?text=${message}`, '_blank');
-        }
-
-        // FAQ Toggle Accordion
-        function toggleFaq(index) {
-            const content = document.getElementById(`faq-content-${index}`);
-            const icon = document.getElementById(`faq-icon-${index}`);
-
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                content.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
+            if (text !== "") {
+                const encodedText = encodeURIComponent(text);
+                window.open(`https://wa.me/${adminWA}?text=${encodedText}`, '_blank');
             }
         }
 
-        // Initial Price Load
-        updatePrice();
+        // Handle General Contact Form
+        function handleGeneralContact(e) {
+            e.preventDefault();
+            const nama = document.getElementById('contactNama').value;
+            const layanan = document.getElementById('contactLayanan').value;
+            const pesan = document.getElementById('contactPesan').value;
+
+            const text = `Halo Ristech, saya *${nama}*.\n\nSaya tertarik dengan layanan: *${layanan}*.\n\nPesan:\n"${pesan}"\n\nMohon informasinya, terima kasih.`;
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/${adminWA}?text=${encodedText}`, '_blank');
+        }
+
+        // Modal Logic UIKA
+        const uikaModal = document.getElementById('uikaModal');
+        const uikaModalContent = document.getElementById('uikaModalContent');
+
+        function openUikaModal() {
+            uikaModal.classList.remove('hidden');
+            uikaModal.classList.add('flex');
+            setTimeout(() => {
+                uikaModalContent.classList.remove('scale-95');
+                uikaModalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeUikaModal() {
+            uikaModalContent.classList.remove('scale-100');
+            uikaModalContent.classList.add('scale-95');
+            setTimeout(() => {
+                uikaModal.classList.add('hidden');
+                uikaModal.classList.remove('flex');
+            }, 200);
+        }
+
+        // Handle UIKA Promo Form
+        function handleUikaPromo(e) {
+            e.preventDefault();
+            const nama = document.getElementById('uikaNama').value;
+            const npm = document.getElementById('uikaNpm').value;
+            const ttl = document.getElementById('uikaTtl').value;
+
+            const text = `Halo Admin Ristech! Saya ingin mengklaim *Promo Mahasiswa UIKA Bogor (Portfolio Rp 35.000)*.\n\nBerikut data diri saya:\n- Nama Lengkap: *${nama}*\n- NPM: *${npm}*\n- Tanggal Lahir: *${ttl}*\n\n_(Saya akan mengirimkan foto Bukti KTM setelah pesan ini)_.\n\nMohon verifikasinya min, terima kasih!`;
+
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/${adminWA}?text=${encodedText}`, '_blank');
+            closeUikaModal();
+        }
+
+        // Menutup modal jika klik di luar area form
+        window.addEventListener('click', (e) => {
+            if (e.target === uikaModal) {
+                closeUikaModal();
+            }
+        });
     </script>
 </body>
 
